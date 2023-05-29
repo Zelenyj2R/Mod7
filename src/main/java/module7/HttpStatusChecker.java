@@ -6,7 +6,7 @@ public class HttpStatusChecker {
             String url = "https://http.cat" + "/" + code + ".jpg";
 
             int statusCode = Utils.getRequestStatus(url);
-            if (statusCode == -1 || statusCode == 404) {
+            if (statusCode == 0 || statusCode == 404) {
                 throw new RuntimeException("Image not found");
             } else {
                 return url;
